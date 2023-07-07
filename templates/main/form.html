@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Form{% endblock %}
+
+{% block content %}
+<div class="box-form">
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="negative">Negative:</label>
+        <input type="checkbox" id="negative" name="checkbox" onclick="clearCheckbox('positive')">
+
+        <label for="positive">Positive:</label>
+        <input type="checkbox" id="positive" name="checkbox" onclick="clearCheckbox('negative')">
+
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <center>
+            <input type="submit" value="Send" style="margin-top: 15px;">
+        </center>
+    </form>
+
+</div>
+{% endblock %}

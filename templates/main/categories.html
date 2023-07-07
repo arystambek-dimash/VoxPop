@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block tilte %}Categories{% endblock %}
+
+{% block content %}
+<p style="
+    font-size: 36px;
+    text-align: center;
+    padding-bottom: 15px;
+ ">Categories</p>
+<div class="box-button" style="padding-top: 50px;padding-bottom: 200px;">
+    <center>
+        <div class="button">
+            <form action="/feeds" method="get">
+                <input type="submit" style="background-color: #0056b3;color: white;" required name="negative"
+                       value="Negative">
+            </form>
+        </div>
+        <div class="button">
+            <form action="/feeds" method="get">
+                <input type="submit" style="background-color: #0056b3;color: white;" required name="positive"
+                       value="Positive">
+            </form>
+        </div>
+    </center>
+</div>
+{% endblock %}
