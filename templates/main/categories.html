@@ -8,20 +8,16 @@
     text-align: center;
     padding-bottom: 15px;
  ">Categories</p>
-<div class="box-button" style="padding-top: 50px;padding-bottom: 200px;">
-    <center>
-        <div class="button">
-            <form action="/feeds" method="get">
-                <input type="submit" style="background-color: #0056b3;color: white;" required name="negative"
-                       value="Negative">
-            </form>
-        </div>
-        <div class="button">
-            <form action="/feeds" method="get">
-                <input type="submit" style="background-color: #0056b3;color: white;" required name="positive"
-                       value="Positive">
-            </form>
-        </div>
-    </center>
+<div class="box-button" style="padding-top: 50px;padding-bottom: 200px; margin-left: 3%">
+    <div class="button">
+        <form action="/feeds" method="get">
+            <input type="submit" name = "check" required value="POSITIVE" style="width: 250px;height: 100px;box-shadow: 0 0 0 0;border-radius: 15px;font-size: 32px;font-weight: bold">
+        </form>
+    </div>
+    <div class="button">
+        <form action="/feeds" method="get">
+            <input type="submit" name = "check" required value="NEGATIVE" style="width: 250px;height: 100px;box-shadow: 0 0 0 0;border-radius: 15px;font-size: 32px;font-weight: bold">
+        </form>
+    </div>
 </div>
 {% endblock %}

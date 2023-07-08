@@ -4,15 +4,15 @@
 
 {% block content %}
 <div class="box-form">
-    <form>
+    <form action="/form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
 
         <label for="negative">Negative:</label>
-        <input type="checkbox" id="negative" name="checkbox" onclick="clearCheckbox('positive')">
+        <input type="checkbox" id="negative" name="check" onclick="clearCheckbox('positive')">
 
         <label for="positive">Positive:</label>
-        <input type="checkbox" id="positive" name="checkbox" onclick="clearCheckbox('negative')">
+        <input type="checkbox" id="positive" name="check" onclick="clearCheckbox('negative')">
 
 
         <label for="message">Message:</label>

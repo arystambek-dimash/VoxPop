@@ -164,7 +164,7 @@ box-footer{
   padding: 20px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
   min-width: 200px;
@@ -195,7 +195,6 @@ input[type="submit"]:hover {
 .box-feed-chill{
   width: 1500px;
   height: auto;
-
   background-color: #F2F2F2;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
 }
@@ -212,14 +211,6 @@ input[type="submit"]:hover {
   justify-content: space-between;
   box-sizing: border-box;
 }
-
-
-
-form {
-  width: 300px;
-  margin: 0 auto;
-}
-
 label {
   display: block;
   margin-top: 10px;
@@ -227,7 +218,6 @@ label {
 }
 
 input[type="text"],
-input[type="email"],
 textarea {
   width: 100%;
   padding: 8px;
