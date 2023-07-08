@@ -3,6 +3,30 @@
 {% block title %}Feeds{% endblock %}
 
 {%block content%}
+<style>
+    .pagination {
+        display: inline-block;
+    }
+
+    .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+    }
+
+    .pagination a.active {
+        background-color: #0056b3;
+        color: white;
+        border: 1px solid #0056b3;
+    }
+
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+</style>
 <div class="box-content" style="height: 200px;">
     <p>To write a comment, click here ---------></p>
     <div class="box-button">
@@ -28,7 +52,7 @@
     </form>
 </div>
 
-<div class="box-feed">
+<div class="box-feed" id="comments">
     <p style="
     font-size: 36px;
     text-align: center;
@@ -48,6 +72,18 @@
         </p>
     </div>
     {% endfor %}
-
+    <div style="display: flex;justify-content: center;align-items: center;margin-top: 50px">
+        <div class="pagination">
+            {% if p > 1 %}
+            <a href="feeds?page={{ p-1 }}#comments">&laquo;</a>
+            {% endif %}
+            {% for page in pages %}
+            <a href="feeds?page={{page}}#comments" {% if page== p %}class="active" {% endif %}>{{ page }}</a>
+            {% endfor %}
+            {% if len > p %}
+            <a href="feeds?page={{ p+1 }}#comments">&raquo;</a>
+            {% endif %}
+        </div>
+    </div>
 </div>
 {% endblock %}
