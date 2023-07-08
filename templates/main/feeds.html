@@ -27,11 +27,15 @@
                style="height: 60px;width: 150px;box-shadow: none;font-size: 20px;margin-top: 9px">
     </form>
 </div>
-<p style="font-size: 50px">{{ c }}</p>
 
-{% for comment in category %}
 <div class="box-feed">
-    <div class="box-feed-chill">
+    <p style="
+    font-size: 36px;
+    text-align: center;
+    padding-bottom: 15px;
+ ">Comments</p>
+    {% for comment in category %}
+    <div class="box-feed-chill" style="margin-top: 50px">
         <div class="box-comm-chill">
             <div class="user"><p>{{ comment.user }}</p></div>
             <div style="display: flex;justify-content: center">
@@ -43,6 +47,7 @@
             {{ comment.comment }}
         </p>
     </div>
+    {% endfor %}
+
 </div>
-{% endfor %}
 {% endblock %}
