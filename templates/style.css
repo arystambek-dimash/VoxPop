@@ -205,12 +205,30 @@ input[type="submit"]:hover {
   padding-top: 15px;
 }
 
-.box-comm-chill{
-  padding-top: 30px;
-  display: flex;
-  justify-content: space-between;
-  box-sizing: border-box;
+.box-comm-chill {
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
 }
+
+.user, .category, .date {
+  margin-bottom: 5px;
+}
+
+.user p {
+  font-weight: bold;
+}
+
+.category p {
+  font-style: italic;
+}
+
+.date p {
+  color: #999;
+  font-size: 12px;
+}
+
 label {
   display: block;
   margin-top: 10px;

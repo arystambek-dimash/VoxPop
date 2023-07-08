@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request,Form
+from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from .repository import CommentRepository
@@ -37,9 +38,12 @@ def home(request:Request,check:str = "",search:str=""):
 
 
 @app.get("/form")
-def home(request:Request,):
+def home(request:Request):
+    print(repository.get_all())
+
     return templates.TemplateResponse("main/form.html", {"request": request})
 
 @app.post("/form")
-def home(request:Request,):
-    return templates.TemplateResponse("main/form.html", {"request": request})
+def home(request:Request,name:str = Form(),check:str = Form(),message:str = Form()):
+    repository.save({"user": name, 'category': check, "comment": message})
+    return RedirectResponse('/feeds',status_code=303)

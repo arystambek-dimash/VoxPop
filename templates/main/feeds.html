@@ -19,12 +19,13 @@
     text-align: center;
     padding-bottom: 15px;
  ">Search</p>
-        <form action="/feeds" method="get" style="display: flex;justify-content: center">
-            <label style="display: flex;justify-content: left;">
-                <input type="search" required name="search" placeholder="Search FeedBacks" class="search">
-            </label>
-            <input type="submit" required name="find" value="Find" style="height: 60px;width: 150px;box-shadow: none;font-size: 20px;margin-top: 9px">
-        </form>
+    <form action="/feeds" method="get" style="display: flex;justify-content: center">
+        <label style="display: flex;justify-content: left;">
+            <input type="search" required name="search" placeholder="Search FeedBacks" class="search">
+        </label>
+        <input type="submit" required name="find" value="Find"
+               style="height: 60px;width: 150px;box-shadow: none;font-size: 20px;margin-top: 9px">
+    </form>
 </div>
 <p style="font-size: 50px">{{ c }}</p>
 
@@ -33,7 +34,10 @@
     <div class="box-feed-chill">
         <div class="box-comm-chill">
             <div class="user"><p>{{ comment.user }}</p></div>
-            <div class="category"><p>{{ comment.category }}</p></div>
+            <div style="display: flex;justify-content: center">
+                <div class="category"><p>Category: {{ comment.category }}</p></div>
+                <div class="date"><p>Date Post: {{ comment.date }}</p></div>
+            </div>
         </div>
         <p style="padding-bottom: 20px">
             {{ comment.comment }}
