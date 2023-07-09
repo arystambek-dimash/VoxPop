@@ -58,6 +58,7 @@
     text-align: center;
     padding-bottom: 15px;
  ">Comments</p>
+    {% if category %}
     {% for comment in category %}
     <div class="box-feed-chill" style="margin-top: 50px">
         <div class="box-comm-chill">
@@ -72,6 +73,11 @@
         </p>
     </div>
     {% endfor %}
+    {% else %}
+    <center>
+        <p>no comments yet</p>
+    </center>
+    {% endif %}
     <div style="display: flex;justify-content: center;align-items: center;margin-top: 50px">
         <div class="pagination">
             {% if p > 1 %}

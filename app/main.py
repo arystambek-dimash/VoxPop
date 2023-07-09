@@ -48,6 +48,9 @@ def home(request: Request):
 
 
 @app.post("/form")
-def home(request: Request, name: str = Form(), check: str = Form(), message: str = Form()):
+def home(request: Request,
+         name: str = Form(),
+         check: str = Form(),
+         message: str = Form()):
     repository.save({"user": name, 'category': check, "comment": message, "date": str(datetime.date.today())})
     return RedirectResponse('/feeds', status_code=303)
