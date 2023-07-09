@@ -30,9 +30,9 @@ def home(request: Request, check: str = "", search: str = "", page: int = 1, lim
     start = (page - 1) * limit
     end = start + limit
     filtered_category = repository.get_all()
-    total_page = [i for i in range(1, math.ceil(len(repository.get_all()) / limit) + 1)]
     if check:
         filtered_category = [i for i in repository.get_all() if i["category"] == check.lower()]
+    total_page = [i for i in range(1, math.ceil(len(repository.get_all()) / limit) + 1)]
     filtered_category_children = []
     for i in filtered_category:
         if search.lower() in i["comment"].lower():
